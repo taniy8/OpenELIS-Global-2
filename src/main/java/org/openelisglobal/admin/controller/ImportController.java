@@ -21,15 +21,15 @@ public class ImportController {
     private void importDataFromFhir(ResourceType resourceType)
             throws FhirLocalPersistingException, FhirGeneralException, IOException {
         switch (resourceType) {
-        case ORGANIZATION:
-            SpringContext.getBean(OrganizationImportService.class).importOrganizationList();
-            break;
-        case PROVIDER:
-            SpringContext.getBean(ProviderImportService.class).importPractitionerList();
-            break;
-        default:
-            // Handle invalid resource type
-            throw new UnsupportedOperationException("Unsupported resource type");
+            case ORGANIZATION:
+                SpringContext.getBean(OrganizationImportService.class).importOrganizationList();
+                break;
+            case PROVIDER:
+                SpringContext.getBean(ProviderImportService.class).importPractitionerList();
+                break;
+            default:
+                // Handle invalid resource type
+                throw new UnsupportedOperationException("Unsupported resource type");
         }
     }
 
